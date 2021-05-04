@@ -175,7 +175,7 @@ To stop the Jupyter server, press `CTRL+C` within the terminal running Docker.
 Confirm with `y`.
 
 
-## O1) Optional: Downloading and plotting the pre-baked results
+## 6): Downloading and plotting the pre-baked results
 
 The following step downloads and extracts pre-backed results for a 24h simulation time span.
 **This will override existing .npz files** - please copy them to a save location beforehand.
@@ -189,12 +189,12 @@ unzip 24h_results.zip
 
 Alternatively, you can open the url in your browser, download, and extract the archive manually.
 
-Afterwards, re-run the "Creating Graphs" step while making sure to change the code back to `DEFAULT_MS = 24 * 3_600 * 1_000`.
+Afterwards, re-run step "5) Creating Graphs" while making sure to change the code back to `DEFAULT_MS = 24 * 3_600 * 1_000`.
 
 The resulting graphs should be (almost) identical with the ones from the paper.
 
 
-## O2) Optional: Running the simulation on a computing cluster
+## Optional: Running the simulation on a computing cluster
 
 This section provides a quick overview of the tooling that I used for running larger simulation configurations on the [Cambridge High Performance Computing cluster](https://www.hpc.cam.ac.uk/high-performance-computing).
 If you have access to a system that is managed via `slurm`, then the following steps might help you.
@@ -211,7 +211,7 @@ Unfortunately, I cannot provide detailed instructions as all systems are slightl
 - Create graphs as usual.
 
 
-## O3) Optional: Remove the docker image from your machine
+## Optional: Remove the docker image from your machine
 
 You can clean most of the disk space used by the Docker image using the following command:
 
