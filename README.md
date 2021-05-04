@@ -2,6 +2,8 @@
 
 This repository contains a Loopix mix network simulator that accompanies the paper accepted at USENIX Security 2021: "Rollercoaster: An Efficient Group-Multicast Scheme for Mix Networks".
 
+**➡️ NOTE FOR AEC: The full instruction with a step-by-step guide can be found in [docs/walkthrough.md](docs/walkthrough.md).**
+
 The simulator and tooling allow:
  - Creating new simulation configurations via a Jupyter Notebook.
  - Running these configurations via a deterministic simulator.
