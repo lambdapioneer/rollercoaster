@@ -4,7 +4,7 @@ This repository contains a Loopix mix network simulator that accompanies the pap
 
 The simulator and tooling allow:
  - Creating new simulation configurations via a Jupyter Notebook.
- - Running these configurations via a time-step simulator.
+ - Running these configurations via a deterministic simulator.
  - (Re-)Creating the graphs presented in the paper.
 
 The software in this repository is licensed under the MIT license as described in the `LICENSE` file.
@@ -12,7 +12,7 @@ The software in this repository is licensed under the MIT license as described i
 Optionally: For large simulation configurations it contains helper scripts for scheduling the simulator jobs on a computing cluster that can execute slurm files.
 
 
-## Requirements
+## 1) Requirements
 
 Making effective use of this repository requires at least the following:
  - Basic usage of standard developer tools: command line, git, text editor
@@ -32,7 +32,7 @@ I recommend using the **Docker** scripts and focus on this approach in the walk-
 However, for longer simulations replacing CPython with PyPy can provide you with noticeable speed-up of up to 300%.
 
 
-## Documentation
+## 2) Documentation
 
 Please read the files within the `docs/` folder before starting experimenting with the code.
 

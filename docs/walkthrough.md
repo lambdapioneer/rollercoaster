@@ -13,11 +13,11 @@ The total expected time required is:
  - <12h compute time (wall time on a modern computer)
 
 
-## Setup (25min human time; 1h compute time)
+## 1) Setup (25min human time; 1h compute time)
 
 The following steps only need to be executed once for the initial setup.
 
-### Ensuring Docker is available (10min human time)
+### 1.1) Ensuring Docker is available (10min human time)
 
 Run:
 ```
@@ -28,7 +28,7 @@ If you receive a version number Docker is installed.
 If you get an error, please install Docker on your system.
 
 
-### Downloading this repository (5min human time)
+### 1.2) Downloading this repository (5min human time)
 
 Clone this repository and make it the current working folder.
 
@@ -39,7 +39,7 @@ cd rollercoaster
 ```
 
 
-### Building Docker image (5min human time; 15min-1h compute time)
+### 1.3) Building Docker image (5min human time; 15min-1h compute time)
 
 Form inside the repository build a Docker image based on CPython.
 
@@ -58,7 +58,7 @@ Since the pickle files are compatible, you might want to swap to PyPy for runnin
 For this edit the Dockerfile between those steps and run the build script again.
 
 
-### Verifying Setup by running unit tests (5min human time)
+### 1.4) Verifying Setup by running unit tests (5min human time)
 
 Run:
 ```
@@ -84,7 +84,7 @@ TOTAL                                     865     61    93%
 ```
 
 
-## Creating simulations (5min human time; 5min compute time)
+## 2) Creating simulations (5min human time; 5min compute time)
 
 The following step starts Jupyter within the Docker container and makes the port 8888 available to localhost.
 It also mounts the folder `pickles/` so it is accessible within the Docker container (for saving the configurations).
@@ -110,7 +110,7 @@ To stop the Jupyter server, press `CTRL+C` within the terminal running Docker.
 Confirm with `y`.
 
 
-## Running simulations (5min human time; 10h compute time)
+## 3) Running simulations (5min human time; 10h compute time)
 
 The following step starts the `parallelrunner.py` for all created simulation configurations.
 If you have chosen a simulated time span of `1h`, this can take up to 10h of wall time on a modern computer with 8 cores.
@@ -130,7 +130,7 @@ Once finished, run `ls pickles/*output | wc -l` to confirm that 276 new simulati
 **Optional:** If the simulation is aborted for any reason, you can use `scripts/list_missing_outputs.py` to generate a list of simulations that have to be re-run.
 
 
-## Pre-processing results (5min human time; 10min compute time)
+## 4) Pre-processing results (5min human time; 10min compute time)
 
 The following step converts the simulation results from the pickle format into a compressed numpy array format that is more efficient to load.
 
@@ -145,7 +145,7 @@ You can use your system's process monitor (e.g. `htop`) or simply `ls pickles/*n
 Once finished, run `ls pickles/*npz | wc -l` to confirm that 276 new compressed numpy array files have been created.
 
 
-## Creating graphs (5min human time; 10min compute time)
+## 5) Creating graphs (5min human time; 10min compute time)
 
 The following step starts Jupyter within the Docker container and makes the port 8888 available to localhost.
 It also mounts the folders `pickles/` and `output/` so they are accessible within the Docker container (for reading the simulation results and saving the generated graphs).
@@ -175,7 +175,7 @@ To stop the Jupyter server, press `CTRL+C` within the terminal running Docker.
 Confirm with `y`.
 
 
-## Optional: Downloading and plotting the pre-baked results
+## O1) Optional: Downloading and plotting the pre-baked results
 
 The following step downloads and extracts pre-backed results for a 24h simulation time span.
 **This will override existing .npz files** - please copy them to a save location beforehand.
@@ -194,7 +194,7 @@ Afterwards, re-run the "Creating Graphs" step while making sure to change the co
 The resulting graphs should be (almost) identical with the ones from the paper.
 
 
-## Optional: Running the simulation on a computing cluster
+## O2) Optional: Running the simulation on a computing cluster
 
 This section provides a quick overview of the tooling that I used for running larger simulation configurations on the [Cambridge High Performance Computing cluster](https://www.hpc.cam.ac.uk/high-performance-computing).
 If you have access to a system that is managed via `slurm`, then the following steps might help you.
@@ -211,7 +211,7 @@ Unfortunately, I cannot provide detailed instructions as all systems are slightl
 - Create graphs as usual.
 
 
-## Optional: Remove the docker image from your machine
+## O3) Optional: Remove the docker image from your machine
 
 You can clean most of the disk space used by the Docker image using the following command:
 
