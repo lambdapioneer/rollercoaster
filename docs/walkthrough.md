@@ -41,7 +41,8 @@ cd rollercoaster
 
 ### 1.3) Building Docker image (5min human time; 15min-1h compute time)
 
-Form inside the repository build a Docker image based on CPython.
+Form inside the repository build the Docker images with a Python environment.
+One is based on CPython (for Jupyter Notebooks) and one is using PyPy (for running the simulations).
 
 Run:
 ```
@@ -50,12 +51,8 @@ Run:
 
 You should see the output from Docker building the images.
 
-**Alternatively** one can use a PyPy image instead (replace `python:3.8` with `pypy:3` in `Dockerfile`).
-Since many dependencies are not pre-built for PyPy, installing then can take a while.
-Also, `numpy` and `pandas` often require some manual fixing to work.
-However, the main simulation can run up to 300% faster.
-Since the pickle files are compatible, you might want to swap to PyPy for running the simulations and use CPython for the Jupyter Notebooks.
-For this edit the Dockerfile between those steps and run the build script again.
+The reason for having two is that PyPy currently has some incompatibles with numpy which is used for creating graphs.
+On the other hand, the simulation runs up to 300% faster in PyPy.
 
 
 ### 1.4) Verifying Setup by running unit tests (5min human time)
@@ -110,20 +107,22 @@ To stop the Jupyter server, press `CTRL+C` within the terminal running Docker.
 Confirm with `y`.
 
 
-## 3) Running simulations (5min human time; 10h compute time)
+## 3) Running simulations (5min human time; 8h compute time)
 
 The following step starts the `parallelrunner.py` for all created simulation configurations.
-If you have chosen a simulated time span of `1h`, this can take up to 10h of wall time on a modern computer with 8 cores.
+If you have chosen a simulated time span of `1h`, this can take up to 8h of wall time on a modern computer.
+On my Laptop with an 8 core Intel i7 it runs for about two hour.
 It is safe to run this in the background.
 However, it has no mechanism to resume once cancelled.
 
 Run:
 ```
-./scripts/docker_04_run_parallelrunner.py
+./scripts/docker_04_run_parallelrunner.sh
 ```
 
 During the executing you will see updates of the individual tasks in a format like: `$SIMTIME $SIMNAME: progress 13.37%`.
 For every completed simulation it outputs a line in the format: `--- Finished 38 of 276 tasks ---`.
+Use this for an educated guess how long this will run on your machine.
 
 Once finished, run `ls pickles/*output | wc -l` to confirm that 276 new simulation result files have been created.
 
@@ -218,4 +217,5 @@ You can clean most of the disk space used by the Docker image using the followin
 Run:
 ```
 docker image rm -f rollercoaster
+docker image rm -f rollercoaster-pypy
 ```
