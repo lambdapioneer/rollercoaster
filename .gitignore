@@ -15,9 +15,9 @@ venv.bak/
 # Anything else
 .ipynb_checkpoints
 
-# Data files
-pickles/
-slurm/
+# Data
+pickles/*input*
+slurm/slurm*
 
 # Test output
 .coverage
