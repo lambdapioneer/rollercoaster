@@ -11,6 +11,7 @@ The software in this repository is licensed under the MIT license as described i
 
 Optionally: For large simulation configurations it contains helper scripts for scheduling the simulator jobs on a computing cluster that can execute slurm files.
 
+
 ## Requirements
 
 Making effective use of this repository requires at least the following:
@@ -28,11 +29,12 @@ The code has been tested on an Ubuntu 20.04 system.
 There are two approaches for running this artefact.
 One can either use the provided **Docker** scripts or run the Python code directly via a **python venv** setup.
 I recommend using the **Docker** scripts and focus on this approach in the walk-through.
-However, for longer simulations using **python venv** directly (especially when replacing CPython with PyPy) can provide you with noticeable speed-up of up to 300%.
+However, for longer simulations replacing CPython with PyPy can provide you with noticeable speed-up of up to 300%.
+
 
 ## Documentation
 
 Please read the files within the `docs/` folder before starting experimenting with the code.
-The `docs/architecture.md` file explains the high-level view of this artefact.
-This provides understanding of its structure and provides orientation if you are getting lost.
-The `docs/walkthrough.md` document is a tutorial with a detailed step-by-step description for reproducing the figures from the paper.
+
+ - [architecture.md](docs/architecture.md) file explains the high-level view of this artefact. This provides understanding of its structure and provides orientation if you are getting lost.
+ - [walkthrough.md](docs/walkthrough.md)` is a tutorial with a detailed step-by-step description for reproducing the figures from the paper.
