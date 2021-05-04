@@ -62,7 +62,8 @@ Run:
 ./scripts/docker_02_tests.sh
 ```
 
-You should see the Python tests being executed and a coverage report similar to the following:
+You should see the Python tests being executed twice (once for each Docker image).
+Each executions contains a coverage report similar to the following:
 
 ```
 [...]
