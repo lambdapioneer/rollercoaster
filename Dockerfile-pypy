@@ -1,4 +1,4 @@
-FROM pypy:3
+FROM pypy:3.7
 
 WORKDIR /rollercoaster
 
