@@ -4,9 +4,9 @@ import pathlib
 
 # Create SLURM scripts
 header = """#!/bin/bash
-#SBATCH --account BERESFORD-SL3-CPU 
-#SBATCH -J rollercoaster
-#SBATCH --partition skylake,cclake
+#SBATCH --account !!REPLACEME!!
+#SBATCH -J !!REPLACEME!!
+#SBATCH --partition !!REPLACEME!!
 #SBATCH --nodes 1
 #SBATCH --ntasks=%d
 #SBATCH --cpus-per-task=1
@@ -18,7 +18,7 @@ header = """#!/bin/bash
 # running long; 8 seems like a reasonable trade-off
 cpu_per_node = 8
 
-python_exec = "/home/dh623/pypy3.6/bin/pypy3.6"
+python_exec = "/home/!!REPLACEME!!/pypy3.6/bin/pypy3.6"
 
 all_filenames = ['pickles/' + x.name for x in pathlib.Path('pickles').glob("*.input")]
 

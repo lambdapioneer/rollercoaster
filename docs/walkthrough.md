@@ -202,7 +202,7 @@ Unfortunately, I cannot provide detailed instructions as all systems are slightl
 
 - Get access to the HPC service (obvious, but might take some time).
 - Install PyPy on the HPC and all required dependencies.
-- Inspect the scripts `scripts/hpc_{01_start,02_wait,03_retrieve,04_preprocess}.sh`.
+- Inspect the scripts `scripts/hpc_{01_start,02_wait,03_retrieve,04_preprocess}.sh` and `create_slurms.py`.
   - Update all paths, usernames, hostnames to match your configuration.
 - Clear your `pickles/` folder.
 - Create the simulation configurations as before.
