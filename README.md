@@ -26,15 +26,10 @@ The code has been tested on an Ubuntu 20.04 system.
 
 **NOTE FOR AEC: If you do not have access to a Unix-like system with 16GiB, I can provide you with remote access to a server with such capabilities.**
 
-There are two approaches for running this artefact.
-One can either use the provided **Docker** scripts or run the Python code directly via a **python venv** setup.
-I recommend using the **Docker** scripts and focus on this approach in the walk-through.
-However, for longer simulations replacing CPython with PyPy can provide you with noticeable speed-up of up to 300%.
-
 
 ## 2) Documentation
 
-Please read the files within the `docs/` folder before starting experimenting with the code.
+Please read the files within the `docs/` folder before starting experimenting with the code. The walkthrough guide is the main document for the artefact evaluation.
 
  - [architecture.md](docs/architecture.md) file explains the high-level view of this artefact. This provides understanding of its structure and provides orientation if you are getting lost.
- - [walkthrough.md](docs/walkthrough.md)` is a tutorial with a detailed step-by-step description for reproducing the figures from the paper.
+ - [walkthrough.md](docs/walkthrough.md) is a tutorial with a detailed step-by-step description for reproducing the figures from the paper.
