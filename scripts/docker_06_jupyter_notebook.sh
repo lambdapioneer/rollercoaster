@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --mount type=bind,source="$(pwd)/pickles",target=/rollercoaster/pickles --mount type=bind,source="$(pwd)/output",target=/rollercoaster/output -p 8888:8888 -it rollercoaster sh -c "jupyter notebook --ip=0.0.0.0 --allow-root";

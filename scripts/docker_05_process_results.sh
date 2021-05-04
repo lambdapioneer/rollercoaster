@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --mount type=bind,source="$(pwd)/pickles",target=/rollercoaster/pickles -it rollercoaster sh -c 'find ./pickles -type f -name "*output" | xargs -n 1 python3 ./scripts/convert_to_npz.py';

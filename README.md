@@ -1,0 +1,38 @@
+# Mix Network Simulator (Rollercoaster Paper) 🎢
+
+This repository contains a Loopix mix network simulator that accompanies the paper accepted at USENIX Security 2021: "Rollercoaster: An Efficient Group-Multicast Scheme for Mix Networks".
+
+The simulator and tooling allow:
+ - Creating new simulation configurations via a Jupyter Notebook.
+ - Running these configurations via a time-step simulator.
+ - (Re-)Creating the graphs presented in the paper.
+
+The software in this repository is licensed under the MIT license as described in the `LICENSE` file.
+
+Optionally: For large simulation configurations it contains helper scripts for scheduling the simulator jobs on a computing cluster that can execute slurm files.
+
+## Requirements
+
+Making effective use of this repository requires at least the following:
+ - Basic usage of standard developer tools: command line, git, text editor
+ - Basic understanding of Python
+ - Starting and editing Jupyter Notebooks
+ - Creating and running Docker images
+
+The simulations and the resulting data can be large - especially when loaded in Jupyter Notebooks.
+I suggest using a machine with at least 16 GiB RAM (preferably more) and 10 GiB of free disk space.
+The code has been tested on an Ubuntu 20.04 system.
+
+**NOTE FOR AEC: If you do not have access to a Unix-like system with 16GiB, I can provide you with remote access to a server with such capabilities.**
+
+There are two approaches for running this artefact.
+One can either use the provided **Docker** scripts or run the Python code directly via a **python venv** setup.
+I recommend using the **Docker** scripts and focus on this approach in the walk-through.
+However, for longer simulations using **python venv** directly (especially when replacing CPython with PyPy) can provide you with noticeable speed-up of up to 300%.
+
+## Documentation
+
+Please read the files within the `docs/` folder before starting experimenting with the code.
+The `docs/architecture.md` file explains the high-level view of this artefact.
+This provides understanding of its structure and provides orientation if you are getting lost.
+The `docs/walkthrough.md` document is a tutorial with a detailed step-by-step description for reproducing the figures from the paper.
