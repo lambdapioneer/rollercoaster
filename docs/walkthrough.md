@@ -24,8 +24,21 @@ Run:
 docker --version
 ```
 
-If you receive a version number Docker is installed.
+If you receive a version number, Docker is installed.
 If you get an error, please install Docker on your system.
+
+Run:
+```
+docker ps
+```
+
+If it outputs a (possibly empty) table, you have the correct Docker permissions.
+If you get a "permission denied" error message, you are missing access rights.
+You can either (a) run the following commands as `root` or (b) follow the [Docker instructions for adding yourself to the docker group](https://docs.docker.com/engine/install/linux-postinstall/).
+
+**For Mac OS users:** On Macs some Docker installations by default do not allow Docker to access all CPU cores and RAM.
+You can change these in the [advanced settings as explained here](https://docs.docker.com/docker-for-mac/).
+This is highly recommended as the simulation is computationally intensive.
 
 
 ### 1.2) Downloading this repository (5min human time)
@@ -112,7 +125,7 @@ Confirm with `y`.
 
 The following step starts the `parallelrunner.py` for all created simulation configurations.
 If you have chosen a simulated time span of `1h`, this can take up to 8h of wall time on a modern computer.
-On my Laptop with an 8 core Intel i7 it runs for about two hour.
+In our test runs (recent i7 CPUs, 8 cores) this step took about two hours.
 It is safe to run this in the background.
 However, it has no mechanism to resume once cancelled.
 
@@ -139,7 +152,7 @@ Run:
 ./scripts/docker_05_process_results.sh
 ```
 
-This will not create any information and will run for up to 10 minutes (for the simulated time span of 1h).
+This will not output any information and will run for up to 10 minutes (for the simulated time span of 1h).
 You can use your system's process monitor (e.g. `htop`) or simply `ls pickles/*npz` to observe progress.
 
 Once finished, run `ls pickles/*npz | wc -l` to confirm that 276 new compressed numpy array files have been created.
@@ -166,10 +179,11 @@ Click on `Kernel` in the top menu and then `Restart & Run All`.
 The entire execution can take up to 10 minutes.
 
 You should be able to see all graphs from the paper within the Notebook and as .png/.pdf files within the `output/` folder.
-If running with just 1h of simulated time, you will see the following discrepancies:
- - The errors are larger
- - The results for offline simulations are slightly different (many timeouts might not have fired, some clients have not come online at all)
- - The Y-Axis for histograms is mislabelled.
+If running with just 1h of simulated time (as recommended), you will see the following discrepancies:
+ - The errors are larger in all figures
+ - The Y-Axis for histograms are mislabelled.
+ - The results for offline simulations are different.
+   - In particular, in Figure 6 *Rollercoaster without fault-tolerance* (green) appears to perform better than it actually does. This is because some of the inner nodes tasked with forwarding messages have not come online at all yet.
 
 To stop the Jupyter server, press `CTRL+C` within the terminal running Docker.
 Confirm with `y`.
@@ -211,7 +225,7 @@ Unfortunately, I cannot provide detailed instructions as all systems are slightl
 - Create graphs as usual.
 
 
-## Optional: Remove the docker image from your machine
+## Optional: Remove the docker images from your machine
 
 You can clean most of the disk space used by the Docker image using the following command:
 

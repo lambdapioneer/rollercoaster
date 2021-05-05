@@ -24,7 +24,7 @@ Making effective use of this repository requires at least the following:
 
 The simulations and the resulting data can be large - especially when loaded in Jupyter Notebooks.
 I suggest using a machine with at least 16 GiB RAM (preferably more) and 10 GiB of free disk space.
-The code has been tested on an Ubuntu 20.04 system.
+The code has been tested on Ubuntu 20.04 and Mac OS 11.3.
 
 **NOTE FOR AEC: If you do not have access to a Unix-like system with 16GiB, I can provide you with remote access to a server with such capabilities.**
 
