@@ -22,6 +22,7 @@ Making effective use of this repository requires at least the following:
  - Starting and editing Jupyter Notebooks
  - Creating and running Docker images
 
+The artefact runs on UNIX like systems with a recent version of Docker installed.
 The simulations and the resulting data can be large - especially when loaded in Jupyter Notebooks.
 I suggest using a machine with at least 16 GiB RAM (preferably more) and 10 GiB of free disk space.
 The code has been tested on Ubuntu 20.04 and Mac OS 11.3.

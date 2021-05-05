@@ -25,6 +25,7 @@ docker --version
 ```
 
 If you receive a version number, Docker is installed.
+We tested this guide with Docker version 20.10.2.
 If you get an error, please install Docker on your system.
 
 Run:
@@ -197,7 +198,7 @@ The following step downloads and extracts pre-backed results for a 24h simulatio
 Run:
 ```
 # [!] Remove the question marks from the URL before running
-wget 159.89.249.51/24h_results???????.zip
+wget rollercoaster.danielhugenroth.com/24h_results???????.zip
 unzip 24h_results.zip
 ```
 
