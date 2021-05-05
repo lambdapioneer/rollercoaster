@@ -6,7 +6,7 @@ However, to reduce the total compute time for the simulation, I suggest to use a
 It is clearly marked how you can change this and what discrepancies to expect.
 I also explain how to download pre-baked simulation results for the full time span.
 
-I suggest that you read `architecture.md` before going through this file.
+I suggest that you read [`architecture.md`](architecture.md) before going through this file.
 
 The total expected time required is:
  - <4h human time (active work by you)
