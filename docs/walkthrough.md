@@ -186,6 +186,8 @@ If running with just 1h of simulated time (as recommended), you will see the fol
  - The results for offline simulations are different.
    - In particular, in Figure 6 *Rollercoaster without fault-tolerance* (green) appears to perform better than it actually does. This is because some of the inner nodes tasked with forwarding messages have not come online at all yet.
 
+The comments in the notebook file and the table in [`output/file_to_figure_mapping.md`](../output/file_to_figure_mapping.md) explain the mapping between the created output and the figures in the paper.
+
 To stop the Jupyter server, press `CTRL+C` within the terminal running Docker.
 Confirm with `y`.
 
