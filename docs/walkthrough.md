@@ -194,17 +194,20 @@ Confirm with `y`.
 
 ## 6): Downloading and plotting the pre-baked results
 
-The following step downloads and extracts pre-backed results for a 24h simulation time span.
+This step downloads and extracts pre-backed results for a 24h simulation time span.
 **This will override existing .npz files** - please copy them to a save location beforehand.
+
+Use the following link for the download: [https://drive.google.com/file/d/1LKofvxmd9YioWdx2vF2LYDa6xf4Fo0Kj/view](https://drive.google.com/file/d/1LKofvxmd9YioWdx2vF2LYDa6xf4Fo0Kj/view).
+The download is started using the icon with the downward arrow in the top-right corner.
 
 Run:
 ```
-# [!] Remove the question marks from the URL before running
-wget rollercoaster.danielhugenroth.com/24h_results???????.zip
+# copying the file to the root folder of this repo
+cp ../your/location/24h_results.zip .
 unzip 24h_results.zip
 ```
 
-Alternatively, you can open the url in your browser, download, and extract the archive manually.
+Alternatively, you can extract the archive manually.
 
 Afterwards, re-run step "5) Creating Graphs" while making sure to change the code back to `DEFAULT_MS = 24 * 3_600 * 1_000`.
 
